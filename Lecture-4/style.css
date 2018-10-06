@@ -1,0 +1,30 @@
+
+
+#box2 {
+	background-color: green;
+	width: 100px;
+}
+
+.box1 {
+	background-color: gray;
+	color: white;
+	height: 100px;
+}
+
+div {
+	background-color: orange;
+	color: lightgreen;
+	font-size: 16px;
+}
+
+.box4 {
+	font-size: 18px;
+}
+
+.box2 {
+	font-size: 22px;
+}
+
+.box3 {
+	background-color: magenta;
+}

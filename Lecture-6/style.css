@@ -1,0 +1,17 @@
+.card {
+	width: 60%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+
+.card > img {
+	width: 100%;
+	min-width: 200px;
+	min-height: 180px;
+}
+
+.description {
+	height: 200px;
+	overflow-y: scroll;
+}
