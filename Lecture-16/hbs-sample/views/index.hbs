@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+
+    <form action='/' method="post">
+      <input type="text" name="task" id="task">
+      <input type="submit" value="ADD">
+    </form>
+
+    <ul>
+      {{#each tasks as |task|}}
+        <li>{{task}}</li>
+      {{/each}}
+    </ul>
+  </body>
+</html>
