@@ -4,7 +4,7 @@ const app = express()
 
 let tasks = []
 
-app.set('view engine', 'hbs')
+app.set('view engine', 'hbs') // pug, jade, ejsh
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
