@@ -10,41 +10,8 @@ app.use(express.urlencoded({
   extended: true
 }))
 
-app.get('/login', (req, res) => {
-  res.render('login')
-})
-app.post('/login', async (req, res) => {
-  const user = await Users.findOne({
-    where: {
-      username: req.body.username
-    }
-  })
-
-  if (!user) {
-    return res.send('Wrong username')
-  }
-
-  if (user.password != req.body.password) {
-    return res.send('Wrong password')
-  }
-
-  res.redirect('/profile')
-
-})
-
-app.get('/signup', (req, res) => {
-  res.render('signup')
-})
-
-app.post('/signup', async (req, res) => {
-  const user = await Users.create({
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email
-  })
-  console.log(user)
-  res.redirect('/login')
-})
+app.use('/login', require('./routes/login'))
+app.use('/signup', require('./routes/signup'))
 
 app.get('/profile', (req, res) => {
   res.send('Hi There!')
