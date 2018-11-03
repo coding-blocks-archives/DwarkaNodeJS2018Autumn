@@ -7,8 +7,8 @@ route.get('/', (req, res) => {
 
 route.post('/', async (req, res) => {
   const user = await Users.create({
-    username: req.body.username,
-    password: req.body.password,
+    username: req.body.username || undefined,
+    password: req.body.password || undefined,
     email: req.body.email
   })
   console.log(user)
