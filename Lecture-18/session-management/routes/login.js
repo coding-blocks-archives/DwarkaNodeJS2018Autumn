@@ -20,7 +20,7 @@ route.post('/', async (req, res) => {
   if (user.password != req.body.password) {
     return res.send('Wrong password')
   }
-
+  req.session.userId = user.id
   res.redirect('/profile')
 
 })
