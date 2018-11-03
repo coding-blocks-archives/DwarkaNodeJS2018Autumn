@@ -1,28 +1,18 @@
 const route = require('express').Router()
-const { Users } = require('../db')
-
+const {
+  Users
+} = require('../db')
+const passport = require('../passport')
 
 route.get('/', (req, res) => {
   res.render('login')
 })
 
-route.post('/', async (req, res) => {
-  const user = await Users.findOne({
-    where: {
-      username: req.body.username
-    }
+route.post('/',
+  passport.authenticate('local', {
+    successRedirect: '/profile',
+    failureRedirect: '/login'
   })
-
-  if (!user) {
-    return res.send('Wrong username')
-  }
-
-  if (user.password != req.body.password) {
-    return res.send('Wrong password')
-  }
-  req.session.userId = user.id
-  res.redirect('/profile')
-
-})
+)
 
 module.exports = route
