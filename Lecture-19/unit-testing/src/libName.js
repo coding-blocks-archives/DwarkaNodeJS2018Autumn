@@ -14,12 +14,16 @@ function getLastName(fullName) {
 }
 
 function getMiddleName(fullName) {
-
+  let splitName = fullName.split(' ')
+  if (splitName.length < 3) {
+    return null
+  }
+  return splitName[1]
 }
 
 module.exports = {
   getFirstName,
   getLastName,
-  getLastName
+  getMiddleName
 }
 

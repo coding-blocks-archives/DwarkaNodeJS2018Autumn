@@ -29,3 +29,17 @@ describe('tests for getLastName', () => {
     expect(lastName).to.equal(null)
   })
 })
+
+describe('tests for getMiddleName', () => {
+
+  it('should return Kumar for Ashok Kumar Singh', () => {
+    let lastName = lib.getMiddleName('Ashok Kumar Singh')
+    expect(lastName).to.equal('Kumar')
+  })
+
+  it('should return null for Ashok Kumar', () => {
+    let lastName = lib.getMiddleName('Ashok Kumar')
+    expect(lastName).to.equal(null)
+  })
+
+})
